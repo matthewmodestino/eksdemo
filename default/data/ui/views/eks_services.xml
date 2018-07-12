@@ -1,0 +1,86 @@
+<form>
+  <label>Services</label>
+  <fieldset submitButton="false">
+    <input type="time" token="timepicker">
+      <label></label>
+      <default>
+        <earliest>-4h@m</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+    <input type="dropdown" token="namespace" searchWhenChanged="true">
+      <label>Namespace</label>
+      <default>*</default>
+      <fieldForLabel>metadata.name</fieldForLabel>
+      <fieldForValue>metadata.name</fieldForValue>
+      <search>
+        <query>index=k8s sourcetype=k8s:api:namespaces
+| dedup metadata.name
+| stats count by metadata.name
+| fields metadata.name</query>
+        <earliest>-24h@h</earliest>
+        <latest>now</latest>
+      </search>
+      <prefix>metadata.namespace=</prefix>
+      <choice value="*">ALL</choice>
+      <initialValue>*</initialValue>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>Services</title>
+      <table>
+        <title>click a service for details</title>
+        <search>
+          <query>index=k8s sourcetype="k8s:api:services" $namespace$
+|  stats values(spec.selector.*) AS selector.*, values(spec.clusterIP) AS clusterIP, values(spec.ports{}.port) AS port, values(spec.ports{}.protocol) AS protocol max(metadata.creationTimestamp) AS age by metadata.name, metadata.namespace
+| rename metadata.name AS service
+| eval selector=coalesce('selector.k8s-app','selector.name')
+| fields - selector.k8s-app, selector.name
+| eval age=strptime(age,"%Y-%m-%dT%H:%M:%S") 
+| eval age=round(now()-age,0)
+| eval age=tostring(age,"duration") 
+| sort - age</query>
+          <earliest>$timepicker.earliest$</earliest>
+          <latest>$timepicker.latest$</latest>
+        </search>
+        <option name="count">20</option>
+        <option name="drilldown">cell</option>
+        <drilldown>
+          <set token="selector">$row.selector$</set>
+          <set token="service">$row.service$</set>
+        </drilldown>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Service Details</title>
+      <event>
+        <search>
+          <query>index=k8s sourcetype=k8s:api:services $namespace$ metadata.name=$service$</query>
+          <earliest>-30s@s</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="list.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </event>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Pods</title>
+      <table>
+        <search>
+          <query>index=k8s sourcetype=k8s:api:pods "metadata.labels.name"=$selector$ $namespace$
+| stats values(metadata.name) AS pods</query>
+          <earliest>$timepicker.earliest$</earliest>
+          <latest>$timepicker.latest$</latest>
+        </search>
+        <option name="count">10</option>
+        <option name="drilldown">cell</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+  </row>
+</form>

@@ -1,0 +1,20 @@
+<panel>
+  <title>Cluster CPU Usage In Past 24 Hours</title>
+  <chart>
+    <title>5 min granularity</title>
+    <search>
+      <query>|savedsearch "Cluster CPU Usage" </query>
+      <earliest>-24h@h</earliest>
+      <latest>now</latest>
+      <refresh>30s</refresh>
+      <refreshType>delay</refreshType>
+    </search>
+    <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+    <option name="charting.axisLabelsX.majorLabelStyle.rotation">-45</option>
+    <option name="charting.axisTitleX.visibility">collapsed</option>
+    <option name="charting.chart">area</option>
+    <option name="charting.chart.nullValueMode">connect</option>
+    <option name="charting.drilldown">none</option>
+    <option name="refresh.display">progressbar</option>
+  </chart>
+</panel>

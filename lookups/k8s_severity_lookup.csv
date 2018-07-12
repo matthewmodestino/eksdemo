@@ -1,0 +1,5 @@
+log_severity, severity
+I, INFO
+W, WARNING
+E, ERROR
+F, FATAL

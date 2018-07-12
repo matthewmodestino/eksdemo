@@ -1,0 +1,12 @@
+<panel>
+  <title>Pods Details</title>
+  <table>
+    <search>
+      <query>|savedsearch "Pods Details"</query>
+      <earliest>-24h@h</earliest>
+      <latest>now</latest>
+    </search>
+    <option name="drilldown">none</option>
+    <option name="refresh.display">progressbar</option>
+  </table>
+</panel>

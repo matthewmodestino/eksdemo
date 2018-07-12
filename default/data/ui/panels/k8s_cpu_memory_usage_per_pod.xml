@@ -1,0 +1,12 @@
+<panel>
+  <title>CPU and Memory Usage per Pod</title>
+  <table>
+    <search>
+      <query>|savedsearch "Pod CPU/Memeory Usage Trend"</query>
+      <earliest>-4h@m</earliest>
+      <latest>now</latest>
+    </search>
+    <option name="drilldown">none</option>
+    <option name="refresh.display">progressbar</option>
+  </table>
+</panel>

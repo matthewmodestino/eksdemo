@@ -1,0 +1,40 @@
+[app/ui]
+version = 7.1.1
+modtime = 1530124855.283726000
+
+[app/launcher]
+version = 7.1.1
+modtime = 1530124855.293798000
+
+[app/package/check_for_updates]
+version = 7.1.1
+modtime = 1530124855.298238000
+
+[views/eks_overview]
+version = 7.1.2
+modtime = 1531419308.143867000
+
+[macros/eks_logs]
+access = read : [ * ], write : [ admin ]
+export = system
+owner = admin
+version = 7.1.1
+modtime = 1531249466.905388000
+
+[macros/eks_meta]
+access = read : [ * ], write : [ admin ]
+export = system
+owner = admin
+version = 7.1.1
+modtime = 1531249476.988158000
+
+[macros/eks_metrics]
+access = read : [ * ], write : [ admin ]
+export = system
+owner = admin
+version = 7.1.1
+modtime = 1531249489.800550000
+
+[views/eks_pods]
+version = 7.1.2
+modtime = 1531419106.379552000

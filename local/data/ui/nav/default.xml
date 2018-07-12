@@ -1,0 +1,11 @@
+<nav search_view="search" color="#146eb4">
+  <view name="eks_overview" default='true' />
+  <a href="/app/eks/analysis_workspace">Metrics</a>
+  <collection label="Search">
+    <view name="search" />
+    <view name="datasets" />
+    <view name="reports" />
+    <view name="alerts" />
+    <view name="dashboards" />
+  </collection>
+</nav>

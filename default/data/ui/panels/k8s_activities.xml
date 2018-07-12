@@ -1,0 +1,12 @@
+<panel>
+  <title>Cluster Activities</title>
+  <table>
+    <search>
+      <query>|savedsearch "Kubernetes Events"</query>
+      <earliest>-24h@h</earliest>
+      <latest>now</latest>
+    </search>
+    <option name="drilldown">none</option>
+    <option name="refresh.display">progressbar</option>
+  </table>
+</panel>
