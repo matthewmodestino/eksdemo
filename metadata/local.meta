@@ -12,7 +12,7 @@ modtime = 1530124855.298238000
 
 [views/eks_overview]
 version = 7.1.2
-modtime = 1531419308.143867000
+modtime = 1531422702.420646000
 
 [macros/eks_logs]
 access = read : [ * ], write : [ admin ]
@@ -38,3 +38,11 @@ modtime = 1531249489.800550000
 [views/eks_pods]
 version = 7.1.2
 modtime = 1531419106.379552000
+
+[views/eks_stateful_sets]
+version = 7.1.2
+modtime = 1531421544.505878000
+
+[views/eks_services]
+version = 7.1.2
+modtime = 1531423120.316577000

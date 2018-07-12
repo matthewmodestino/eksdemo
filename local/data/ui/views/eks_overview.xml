@@ -35,7 +35,7 @@
         </search>
         <option name="colorBy">value</option>
         <option name="colorMode">none</option>
-        <option name="drilldown">none</option>
+        <option name="drilldown">all</option>
         <option name="height">115</option>
         <option name="numberPrecision">0</option>
         <option name="rangeColors">["0x555","0x555"]</option>
@@ -53,6 +53,9 @@
         <option name="unitPosition">after</option>
         <option name="useColors">1</option>
         <option name="useThousandSeparators">1</option>
+        <drilldown>
+          <link target="_blank">/app/eks/eks_services</link>
+        </drilldown>
       </single>
     </panel>
     <panel>
@@ -66,7 +69,7 @@
         </search>
         <option name="colorBy">value</option>
         <option name="colorMode">none</option>
-        <option name="drilldown">none</option>
+        <option name="drilldown">all</option>
         <option name="height">115</option>
         <option name="numberPrecision">0</option>
         <option name="rangeColors">["0x555","0x555"]</option>
@@ -84,6 +87,9 @@
         <option name="unitPosition">after</option>
         <option name="useColors">1</option>
         <option name="useThousandSeparators">1</option>
+        <drilldown>
+          <link target="_blank">/app/eks/eks_deployments</link>
+        </drilldown>
       </single>
     </panel>
     <panel>
@@ -97,7 +103,7 @@
         </search>
         <option name="colorBy">value</option>
         <option name="colorMode">none</option>
-        <option name="drilldown">none</option>
+        <option name="drilldown">all</option>
         <option name="height">115</option>
         <option name="numberPrecision">0</option>
         <option name="rangeColors">["0x555","0x555"]</option>
@@ -115,6 +121,9 @@
         <option name="unitPosition">after</option>
         <option name="useColors">1</option>
         <option name="useThousandSeparators">1</option>
+        <drilldown>
+          <link target="_blank">/app/eks/eks_replica_sets</link>
+        </drilldown>
       </single>
     </panel>
     <panel>
@@ -162,7 +171,7 @@
         </search>
         <option name="colorBy">value</option>
         <option name="colorMode">none</option>
-        <option name="drilldown">none</option>
+        <option name="drilldown">all</option>
         <option name="height">115</option>
         <option name="numberPrecision">0</option>
         <option name="rangeColors">["0x555","0x555"]</option>
@@ -180,6 +189,9 @@
         <option name="unitPosition">after</option>
         <option name="useColors">1</option>
         <option name="useThousandSeparators">1</option>
+        <drilldown>
+          <link target="_blank">/app/eks/eks_daemon_sets</link>
+        </drilldown>
       </single>
     </panel>
     <panel>

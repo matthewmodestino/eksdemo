@@ -1,0 +1,16 @@
+<dashboard>
+  <label>Stateful Sets</label>
+  <row>
+    <panel>
+      <event>
+        <title>Statefulsets</title>
+        <search>
+          <query>`eks_meta` sourcetype::kube:objects:stateful_sets</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="list.drilldown">none</option>
+      </event>
+    </panel>
+  </row>
+</dashboard>
